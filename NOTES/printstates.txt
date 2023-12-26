@@ -4,3 +4,10 @@
 
 1.in c bydefault there is no concept like shared memory
 2.in python bydefault there is a concept like shared memory
+
+1.id() is used to get address of data
+
+{C}
+1.long short double :Data Modifires
+2.auto static extern regsiter:Storage classes
+3.Storage-class Initial-value Scope Lifetime
