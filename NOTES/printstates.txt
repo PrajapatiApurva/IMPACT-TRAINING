@@ -1,3 +1,6 @@
 {PYTHON}
 1.In print funtion sep is used to handle multiple entities inside one print statement
 2.In print funtion end is used to handle multiple prints inside python program
+
+1.in c bydefault there is no concept like shared memory
+2.in python bydefault there is a concept like shared memory
