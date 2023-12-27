@@ -1,0 +1,22 @@
+[Python]
+Mahidhar Sir(9:45 to )
+1.Memory Allocation:
+    DMA don't allocate Memory very random,,first it will find if possible to allocate it sequentially,
+    if not possible then oonly it will allocate it randomally
+
+    DS:Array String List Struct Union
+                      |
+                 --------------
+                 |            |
+                linear    Non-linear
+                  |            |
+              ---------      --------
+              |       |      |       |
+            stack   queue   tree   graph
+-----------------------------------------------------------------------------------------------------------
+2.in python everything is by defalt a character...which is converted using ASCII value
+  String is nothing but the collection of character array
+-----------------------------------------------------------------------------------------------------------
+3.flush attribute in print function can't ne handeled by user,it is for the OS only,It is not overridable
+-----------------------------------------------------------------------------------------------------------
+4.in explicit conversion data gets truncated but not lose the original data untill it gets assigned to itself
