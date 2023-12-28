@@ -1,0 +1,46 @@
+2.Types of Array: 1:static      -->Size you know before runtime
+                  2:dynamic     -->Size you know at runtime(can only expand it)
+                  3:stretchable -->shrinking is possible (can expand it as well as shrink it)
+                  4:Mutable     -->Size of array in between Compile-time and Link-time
+---------------------------------------------------------------------------------------------------------------------------------
+2.Pointer doesn't belong to any data type...it is a void type.
+
+
+//Linked List Example
+Struct stdinfo{
+    int rollno;
+    char name[20];
+    Struct stdinfo *ptr; //(*ptr)--->it is a self referantial pointer
+};
+int main(){
+    //initializing
+    Struct stdinfo S1,S2,S3, *head,temp;
+
+    //value assigning
+    S1.rollno=101;
+    S1.name='A';
+    S2.rollno=102;
+    S2.name='B';
+    S3.rollno=103;
+    S3.name='C';
+    
+    //linking
+    *head=&S1;
+    S1.ptr=&S2;
+    S2.ptr=&S3;
+    S3.ptr=NULL;
+
+    temp=&S1;
+    printf("%d"temp->rollno);
+    temp=temp->ptr; //for going to the 2nd node
+    printf("%d"temp->rollno);
+    temp=temp->ptr; //for going to the 3rd node
+    printf("%d"temp->rollno);
+}
+
+Struct stdinfo{
+    int rollno;
+    char name[20];
+    Struct stdinfo *ptr1;
+    Struct stdinfo *ptr2;
+};

@@ -1,0 +1,33 @@
+expression --->operators & operand
+
+Operator --->Some special symbols which hold some functionality to perform operation with the operand.
+operand  --->Using which operation can be perform
+-----------------------------------------------------------------------------------------------------------
+ARITHMATIC: +(Addition) 
+            -(Subtraction) 
+            *(Multiplication) 
+            /(Number Division) 
+            %(Modulo) 
+            //(Floor Division) 
+            **(Power)
+
+Formula of Remainder For Negative Number:: --->dividend_with_sign -(dividend_with_sign//divisor*divisor)
+
+Example for:---->3%-7
+                =23-(23//(-7)*(-7))
+                =23-((-4)*(-7))
+                =23-(28)
+                =-5
+-----------------------------------------------------------------------------------------------------------
+Relation operator works on Bitwise operator
+
+Bitwise Operator: &(AND)
+                  |(OR)
+                  ^(XOR)
+                  >>(Right Shift):(num1>>num2) (num1)/(2^num2)
+                  <<(Left Shift) :(num1<<num2) (num1)*(2^num2) 
+-----------------------------------------------------------------------------------------------------------
+Logical Operator: and(AND)
+                  or(OR)
+                  not(NOT)                    
+
