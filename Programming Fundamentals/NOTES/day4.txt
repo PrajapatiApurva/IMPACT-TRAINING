@@ -1,0 +1,28 @@
+DATE:29/12/2023
+
+Identity Operator:   is(return True if both variables are the same object)
+                     is not(returns True if both variables are not the same object)
+-----------------------------------------------------------------------------------------------------------
+Membership Operator: in(return True if both variables are the same object)
+                     not in(returns True if both variables are not the same object)                 
+___________________________________________________________________________________________________________
+-----------------------------------------------------------------------------------------------------------
+Control Statement:Actually do the control of flow of program
+
+Ways to Control Statements: Conditional 
+                            Iteration 
+                            Branching
+-----------------------------------------------------------------------------------------------------------
+[1]Conditional: 1.if(one condition one possibility)
+                2.if else(one condition 2 possibility)
+                3.elif ladder(multiple condition multiple possibility)
+                4.nested if
+-----------------------------------------------------------------------------------------------------------
+[1]Iteration: 1.for
+                2.while
+                3.do while
+-----------------------------------------------------------------------------------------------------------
+Finite situation:initial value,final value,number of Iteration(SItuation is in our control)
+Unpredictable situation:initial value or final value (any one value is given)
+--->In case of Finite situation for loop is very useful
+--->In case of unpredictable

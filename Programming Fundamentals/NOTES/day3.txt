@@ -1,3 +1,5 @@
+DATE:28/12/2023
+
 expression --->operators & operand
 
 Operator --->Some special symbols which hold some functionality to perform operation with the operand.
@@ -24,6 +26,7 @@ Relation operator works on Bitwise operator
 Bitwise Operator: &(AND)
                   |(OR)
                   ^(XOR)
+                  ~(NOT)
                   >>(Right Shift):(num1>>num2) (num1)/(2^num2)
                   <<(Left Shift) :(num1<<num2) (num1)*(2^num2) 
 -----------------------------------------------------------------------------------------------------------
