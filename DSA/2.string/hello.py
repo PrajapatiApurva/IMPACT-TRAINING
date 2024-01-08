@@ -1,0 +1,12 @@
+s1="      hello Kese ho     "
+print(s1.upper())
+print(s1.capitalize())
+print(s1.center(50,'-'))
+print(s1.isalnum())
+print(s1.isalpha())
+print(s1.isdecimal())
+print(s1.isprintable())
+print(s1.title())
+print(s1.split(' '))
+print(s1.strip())
+print(s1.partition(' '))

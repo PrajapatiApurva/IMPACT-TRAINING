@@ -1,0 +1,29 @@
+# CREATING AN EMPTY LIST
+
+# list_name = []     //empty list
+
+
+
+# HOW TO INSERT ELEMENTS IN LIST
+
+# append   :  Always insert/push element at end/at last index  => has 1 arg i.e data to be inserted
+#             you can also append list,tuple etc
+# insert   :  Insert value at required index  => has 2 args i.e data and position     list_name.insert(index,value)
+#             (diff of position and index => index=position-1)
+# extend   :  same as append but takes multiple values in one list,dict,tuple  =>  nested list
+#             list_name.extend([1,2,3])
+
+
+
+# HOW TO DELETE ELEMENTS IN LIST
+
+# pop     :  indexed based deletion
+#         :  by default remove last
+# remove  :  value based deletion
+# clear   :  clears the elements of list but structure remains same/empty list is returned
+# delete  :  removes list itself/ pointer will be changed / address will not remain in our control
+
+
+
+--->every mutable structures are inplace by default means operations will be stored in original structure permanently
+--->every immutable structures are standard by default
