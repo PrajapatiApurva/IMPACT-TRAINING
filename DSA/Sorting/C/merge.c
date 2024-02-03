@@ -12,7 +12,7 @@ int merge(int a[],int lb,int mid,int ub){
             i++;
         }
         else{
-            b[k]=a[j];
+            b[k]=a[j];  
             k++;
             j++;
         }
