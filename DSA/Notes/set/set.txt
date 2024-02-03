@@ -1,5 +1,0 @@
---->set is mutable ubt set element is immutable
---->set can contain only immutable elements(not mutable like list,set)
---->set can not be defined in terms of inplace or stadard
---->
-

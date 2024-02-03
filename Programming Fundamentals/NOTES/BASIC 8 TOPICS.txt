@@ -1,8 +1,0 @@
-searching 
-sorting 
-traversal 
-insertion 
-deletion 
-creation 
-min 
-max
