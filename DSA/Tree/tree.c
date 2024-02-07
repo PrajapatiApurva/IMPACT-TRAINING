@@ -55,18 +55,6 @@ int findMax(Vertex* root){
     }
 }
 
-Vertex* findMaxAdd(Vertex* root){
-    if(!root){
-        printf("No elements Exist in a tree...\n");
-    }
-    else{
-        while(root->right!=NULL){
-            root=root->right;
-        }
-        return root;
-    }
-}
-
 void inorderTraverse(Vertex* root){
     if(root){
         inorderTraverse(root->left);
