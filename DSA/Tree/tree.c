@@ -1,25 +1,25 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Node
+struct Vertex
 {
     int data;
-    struct Node *left;
-    struct Node *right;
+    struct Vertex *left;
+    struct Vertex *right;
 };
-typedef struct Node Node;
+typedef struct Vertex Vertex;
 
-Node *getNode(int data){
-    Node* node=(Node*)malloc(sizeof(Node));
+Vertex *getVertex(int data){
+    Vertex* node=(Vertex*)malloc(sizeof(Vertex));
     node->data=data;
     node->left=NULL;
     node->right=NULL;
     return node;
 }
 
-Node* insertToBST(Node* root, int data){
+Vertex* insertToBST(Vertex* root, int data){
     if(!root){
-        return getNode(data);
+        return getVertex(data);
     }
     else if(root->data > data){
         root->left = insertToBST(root->left, data);
@@ -29,7 +29,7 @@ Node* insertToBST(Node* root, int data){
     }
 }
 
-void inorderTraverse(Node* root){
+void inorderTraverse(Vertex* root){
     if(root){
         inorderTraverse(root->left);
         printf("%d ", root->data);
@@ -37,7 +37,7 @@ void inorderTraverse(Node* root){
     }
 }
 
-int findMin(Node* root){
+int findMin(Vertex* root){
     if(!root){
         printf("No elements Exist in a tree...\n");
         return -1;
@@ -50,7 +50,7 @@ int findMin(Node* root){
     }
 }
 
-int findMax(Node* root){
+int findMax(Vertex* root){
     if(!root){
         printf("No elements Exist in a tree...\n");
     }
@@ -61,7 +61,7 @@ int findMax(Node* root){
         return root->data;
     }
 }
-Node* findMaxAdd(Node* root){
+Vertex* findMaxAdd(Vertex* root){
     if(!root){
         printf("No elements Exist in a tree...\n");
     }
@@ -74,7 +74,7 @@ Node* findMaxAdd(Node* root){
 }
 
 
-void preorderTraverse(Node* root){
+void preorderTraverse(Vertex* root){
     if(root){
         printf("%d ", root->data);
         preorderTraverse(root->left);
@@ -82,14 +82,14 @@ void preorderTraverse(Node* root){
     }
 }
 
-void postorderTraverse(Node* root){
+void postorderTraverse(Vertex* root){
     if(root){
         postorderTraverse(root->right);
         postorderTraverse(root->left);
         printf("%d ", root->data);
     }
 }
-Node* removeElem(Node* root,int target){
+Vertex* removeElem(Vertex* root,int target){
     if(root == NULL){
         return root;
     }
@@ -103,19 +103,19 @@ Node* removeElem(Node* root,int target){
     }
 
     if(root->left == NULL){
-        Node* temp=root->right;
+        Vertex* temp=root->right;
         free(root);
         return temp;
     }
     else if(root->right == NULL){
-        Node* temp=root->left;
+        Vertex* temp=root->left;
         free(root);
         return temp;
     }
 
     else{
-        Node* parent=root;
-        Node* elem=root->right;
+        Vertex* parent=root;
+        Vertex* elem=root->right;
         while(elem->left != NULL){
             parent = elem;
             elem = elem->left;
@@ -150,7 +150,7 @@ int setNumberdel(){
     return num;
 }
 
-void printTree(Node* root, int level){
+void printTree(Vertex* root, int level){
     if(root){
         printTree(root->right, level + 1);
         for (int i = 0; i < level; i++)
@@ -164,7 +164,7 @@ void printTree(Node* root, int level){
 
 int main()
 { 
-    Node* root = getNode(getNumber());
+    Vertex* root = getVertex(getNumber());
 
     // insertToBST(root, 20);
     // insertToBST(root, 15);
