@@ -29,13 +29,6 @@ Vertex* insertToBST(Vertex* root, int data){
     }
 }
 
-void inorderTraverse(Vertex* root){
-    if(root){
-        inorderTraverse(root->left);
-        printf("%d ", root->data);
-        inorderTraverse(root->right);
-    }
-}
 
 int findMin(Vertex* root){
     if(!root){
@@ -61,6 +54,7 @@ int findMax(Vertex* root){
         return root->data;
     }
 }
+
 Vertex* findMaxAdd(Vertex* root){
     if(!root){
         printf("No elements Exist in a tree...\n");
@@ -73,6 +67,13 @@ Vertex* findMaxAdd(Vertex* root){
     }
 }
 
+void inorderTraverse(Vertex* root){
+    if(root){
+        inorderTraverse(root->left);
+        printf("%d ", root->data);
+        inorderTraverse(root->right);
+    }
+}
 
 void preorderTraverse(Vertex* root){
     if(root){
