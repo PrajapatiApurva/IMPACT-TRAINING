@@ -37,19 +37,20 @@ void inorderTraverse(Node* root){
     }
 }
 
-void findMin(Node* root){
+int findMin(Node* root){
     if(!root){
         printf("No elements Exist in a tree...\n");
+        return -1;
     }
     else{
         while(root->left!=NULL){
             root=root->left;
         }
-        printf("\n%d is the minimum element...",root->data);
+        return root->data;
     }
 }
 
-void findMax(Node* root){
+int findMax(Node* root){
     if(!root){
         printf("No elements Exist in a tree...\n");
     }
@@ -57,9 +58,21 @@ void findMax(Node* root){
         while(root->right!=NULL){
             root=root->right;
         }
-        printf("\n%d is the maximum element...",root->data);
+        return root->data;
     }
 }
+Node* findMaxAdd(Node* root){
+    if(!root){
+        printf("No elements Exist in a tree...\n");
+    }
+    else{
+        while(root->right!=NULL){
+            root=root->right;
+        }
+        return root;
+    }
+}
+
 
 void preorderTraverse(Node* root){
     if(root){
@@ -76,9 +89,52 @@ void postorderTraverse(Node* root){
         printf("%d ", root->data);
     }
 }
+Node* removeElem(Node* root,int target){
+    if(root == NULL){
+        return root;
+    }
+    if(root->data > target){
+        root->left=removeElem(root->left,target);
+        return root;
+    }
+    else if(root->data < target){
+        root->right=removeElem(root->right,target);
+        return root;
+    }
 
+    if(root->left == NULL){
+        Node* temp=root->right;
+        free(root);
+        return temp;
+    }
+    else if(root->right == NULL){
+        Node* temp=root->left;
+        free(root);
+        return temp;
+    }
+
+    else{
+        Node* parent=root;
+        Node* elem=root->right;
+        while(elem->left != NULL){
+            parent = elem;
+            elem = elem->left;
+        }
+
+        if(parent != root){
+            parent->left = elem->right;
+        }
+        else{
+            parent->right = elem->left;
+        }
+
+        root->data = elem->data;
+        free(elem);
+        return root;
+    }
+}
 void printMenu(){
-    printf("\nEnter the Choice:\n1.Insert\n2.Min\n3.Max\n4.Exit\nChoice: ");
+    printf("\nEnter the Choice:\n1.Insert\n2.Min\n3.Max\n4.Exit\n5.delete\nChoice: ");
 }
 
 int getNumber(){
@@ -87,10 +143,40 @@ int getNumber(){
     scanf("%d",&num);
     return num;
 }
+int setNumberdel(){
+    int num;
+    printf("\nEnter the Number You Want to Delete: ");
+    scanf("%d",&num);
+    return num;
+}
+
+void printTree(Node* root, int level){
+    if(root){
+        printTree(root->right, level + 1);
+        for (int i = 0; i < level; i++)
+        {
+            printf("    ");
+        }
+        printf("%d\n", root->data);
+        printTree(root->left, level + 1);
+    }
+}
 
 int main()
 { 
-    Node* root = getNode(10);
+    Node* root = getNode(getNumber());
+
+    // insertToBST(root, 20);
+    // insertToBST(root, 15);
+    // insertToBST(root, 30);
+    // insertToBST(root, 5);
+    // insertToBST(root, 7);
+    // insertToBST(root, 0);
+
+    // removeElem(root,10);
+
+    // printTree(root, 0);
+
     int flag=1;
     while(flag){
         int choice;
@@ -102,13 +188,20 @@ int main()
             insertToBST(root, getNumber());
             break;
         case 2:
-            findMin(root);
+            printf("\n%d is the minimum element...",findMin(root));
             break;
         case 3:
-            findMax(root);
+            printf("\n%d is the minimum element...",findMax(root));
             break;
         case 4:
             flag=0;
+        case 5:
+            // inorderTraverse(root);
+            printTree(root,0);
+            removeElem(root,setNumberdel());
+            printf("Elem is removed...\n");
+            printTree(root,0);
+            break;
         default:
             printf("\nEnter the Valid Choice...");
             break;
@@ -121,11 +214,16 @@ int main()
     
     // findMin(root);
     // findMax(root);
-    inorderTraverse(root);
+    // inorderTraverse(root);
     // printf("\n");
     // preorderTraverse(root);
     // printf("\n");
     // postorderTraverse(root);
     // printf("\n");
+
+
+
     return 0;
 }
+
+
