@@ -16,21 +16,33 @@ class Stack:
 def run():
     
     obj=Stack()
+    minElem=None
     flag=True
     while flag:
-        choice=int(input("1.push 2.pop 3.peek 4.display 5.Exit\nEnter Choice: "))
+        choice=int(input("1.push 2.pop 3.Min 4.Exit\nEnter Choice: "))
         if(choice==1):
             val=int(input("Enter the value : "))
-            obj.push(val)
+            if not obj.stack:
+                minElem=val 
+                obj.push(val)
+            elif  val >= obj.peek():
+                obj.push(val)
+            else:    
+                minElem=val
+                obj.push(2*val - minElem)
+        
         elif(choice==2):
-            print(obj.pop(),"is popped...")
+            if obj.peek()>=minElem:
+                obj.pop()
+            else:
+                minElem=2*minElem - obj.pop()
+        
         elif(choice==3):
-            print(obj.peek(),"is at the Top of the Stack...")
+            print(minElem," is the Minimum Element in the Stack...")
+        
         elif(choice==4):
-            print("Stack elems are: ")
-            obj.display()
-        elif(choice==5):
             flag=False
+        
         else:
             print("Enter the Valid Choice...")
 
