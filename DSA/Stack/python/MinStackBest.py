@@ -25,17 +25,19 @@ def run():
             if not obj.stack:
                 minElem=val 
                 obj.push(val)
-            elif  val >= obj.peek():
+            elif  val >= minElem:
+                minElem=minElem
                 obj.push(val)
             else:    
                 minElem=val
                 obj.push(2*val - minElem)
         
         elif(choice==2):
-            if obj.peek()>=minElem:
-                obj.pop()
+            ans=obj.pop()
+            if ans>=minElem:
+                minElem=minElem
             else:
-                minElem=2*minElem - obj.pop()
+                minElem=2*minElem - ans
         
         elif(choice==3):
             print(minElem," is the Minimum Element in the Stack...")

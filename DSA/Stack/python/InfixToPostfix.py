@@ -1,3 +1,5 @@
+#Infix To Postfix Conversion Only
+
 class Stack:
     def __init__(self):
         self.data = []
@@ -17,9 +19,9 @@ class Stack:
 def priority(item) -> int:
     if item == '(':
         return 0
-    elif item == '+' or item == '-':
+    elif item in '+-':
         return 1
-    elif item == '*' or item == '/':
+    elif item in '*/':
         return 2
     elif item == '^':
         return 3
@@ -56,9 +58,7 @@ def infix_to_postfix(infix_expr: str) -> str:
 
     return postfix_expr
 
-
-infix_expr = input("Enter the Expression: ")
-# infix_expr = 'a+b'
-postfix_expr = infix_to_postfix(infix_expr)
-
-print(postfix_expr)
+if __name__=="__main__":
+    infix_expr = input("Enter the Expression: ")
+    postfix_expr = infix_to_postfix(infix_expr)
+    print(postfix_expr)

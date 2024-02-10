@@ -1,3 +1,6 @@
+/*
+Infix To PostFix Conversion Only
+*/
 #include<stdio.h>
 #include<ctype.h>
 char stack[100];
