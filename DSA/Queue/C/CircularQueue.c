@@ -6,32 +6,33 @@ int front=-1;
 int rear=-1;
 
 void enqueue(int num){
-    if(rear == n-1){
+    if((rear+1) % n == front){
         printf("Queue is Full...\n");
     }
-    else if (front==-1 && rear==-1){
-        front++;    
-        rear++;
+    else if (front==-1){
+        front=0;    
+        rear=0;
         arr[rear]=num;
         printf("%d is pushed!!!\n",arr[rear]);
     }
-    else if(rear != -1){
-        rear++;
+    else{
+        rear = (rear+1) % n;
         arr[rear]=num;
         printf("%d is pushed!!!\n",arr[rear]);
     }
 }
 void dequeue(){
-    if (front==-1 && rear==-1){
+    if (front==-1){
         printf("Empty Queue\n");
     }
-    else if(front!=rear){
-        printf("%d is popped...\n",arr[front++]);
-    }
-    else if(front==rear){
-        printf("%d is popped...\n",arr[front++]);
+    else if(front == rear){
+        printf("%d is popped...\n",arr[front]);
         front=-1;
         rear=-1;
+    }
+    else{
+        printf("%d is popped...\n",arr[front]);
+        front = (front+1) % n;
     }
 }
 void peek(){
@@ -39,18 +40,26 @@ void peek(){
         printf("Empty Queue nothing to show...\n");
     }
     else{
-        printf("%d\n is the last inserted value...\n",arr[rear]);
+        printf("%d is the last inserted value...\n",arr[rear]);
     }
 }
 void display(){
-    if(front==-1 && rear==-1){
+    if(front==-1){
         printf("Empty queue...\n");
     }
-    else{
-        for(int i=front ; i <= rear ; i++){
-        printf("%d ",arr[i]);
+    else if(front<=rear){
+        for(int i=front ; i < n ; i++){
+            printf("%d ",arr[i]);
         }
         printf("\n");
+    }
+    else{
+        for(int i=front ; i < n ; i++){
+            printf("%d ",arr[i]);
+        }
+        for(int i=0 ; i < rear + 1 ; i++){
+            printf("%d ",arr[i]);
+        }
     }
     
 }
