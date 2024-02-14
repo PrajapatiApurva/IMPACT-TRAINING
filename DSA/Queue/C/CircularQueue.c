@@ -35,7 +35,7 @@ void dequeue(){
         front = (front+1) % n;
     }
 }
-void peek(){
+void getRear(){
     if (front==-1 && rear==-1){
         printf("Empty Queue nothing to show...\n");
     }
@@ -90,7 +90,7 @@ int main(){
             dequeue();
             break;
         case 3:
-            peek();
+            getRear();
             break;    
         
         case 4:
