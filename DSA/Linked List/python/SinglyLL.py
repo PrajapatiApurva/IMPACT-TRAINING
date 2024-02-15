@@ -9,7 +9,7 @@ class LinkedList:
         
     def search(self,value):
         if not self.head:
-            print("LL empty")
+            print("LL empty...")
         else:
             temp=self.head
             while temp.data!=value:

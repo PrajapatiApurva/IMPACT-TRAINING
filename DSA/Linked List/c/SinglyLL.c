@@ -1,18 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
-struct Node
+struct SinglyLL
 {
     int data;
-    struct Node *link;
+    struct SinglyLL *link;
 };
 
-typedef struct Node Node;
+typedef struct SinglyLL SinglyLL;
 
-Node *head=NULL;
+SinglyLL *head=NULL;
 
 
-Node* search(int val){
-    Node *temp=head;
+SinglyLL* search(int val){
+    SinglyLL *temp=head;
     while(temp!=NULL){
         if(temp->data==val){
             return temp;
@@ -21,8 +21,8 @@ Node* search(int val){
     }
     return NULL;
 }
-Node *newNode(int value){
-    Node *temp=(Node*)malloc(sizeof(Node));
+SinglyLL *newSinglyLL(int value){
+    SinglyLL *temp=(SinglyLL*)malloc(sizeof(SinglyLL));
     if(temp==NULL){
         printf("No memory Allocated\n");
     }
@@ -34,7 +34,7 @@ void display(){
     if(head==NULL)
         printf("No Linked List to Display\n");
     else{
-        Node *temp=head;
+        SinglyLL *temp=head;
         for(temp;temp!=NULL;temp=temp->link){
             printf("%d->",temp->data);
             
@@ -45,10 +45,10 @@ void display(){
 //insert at beggining
 int insertAtBegin(int val){
     if(head==NULL){
-        head=newNode(val);
+        head=newSinglyLL(val);
     }
     else{
-        Node *temp=newNode(val);
+        SinglyLL *temp=newSinglyLL(val);
         temp->link=head;
         head=temp;
     }
@@ -60,7 +60,7 @@ void deleteAtBeggining(){
         printf("Empty...\n");
     }
     else{
-        Node *temp=head;
+        SinglyLL *temp=head;
         head=head->link;
         free(temp);
     }
@@ -69,14 +69,14 @@ void deleteAtBeggining(){
 //insert at ending
 int insertAtEnd(int val){
     if(head==NULL){
-        head=newNode(10);
+        head=newSinglyLL(10);
     }
     else{
-        Node *temp=head;
+        SinglyLL *temp=head;
         while(temp->link!=NULL){
             temp=temp->link;    
         }
-        Node *temp1=newNode(val);
+        SinglyLL *temp1=newSinglyLL(val);
         temp->link=temp1;
         // tail=temp1;    
     }
@@ -87,37 +87,37 @@ int deleteAtEnd(){
         printf("LL is Empty");
     }
     else{
-        Node *temp=head;
+        SinglyLL *temp=head;
         while(temp->link->link!=NULL){
             temp=temp->link;    
         }
-        Node *temp1=temp->link;
+        SinglyLL *temp1=temp->link;
         temp->link=NULL;
         free(temp1);
     }
 }
 void insertAfter(int prev,int val){
-    Node *temp1=newNode(val);
-    Node* prevNode = search(prev);
-    if(!prevNode){
+    SinglyLL *temp1=newSinglyLL(val);
+    SinglyLL* prevSinglyLL = search(prev);
+    if(!prevSinglyLL){
         return;
     }
     else{
-        temp1->link=prevNode->link;
-        prevNode->link=temp1;
+        temp1->link=prevSinglyLL->link;
+        prevSinglyLL->link=temp1;
     }
 }
 
 void deleteAfter(int prev){
     
-    Node* prevNode = search(prev);
-    if(!prevNode){
+    SinglyLL* prevSinglyLL = search(prev);
+    if(!prevSinglyLL){
         return;
     }
     else{
-        Node* tmp = prevNode->link->link;
-        free(prevNode->link);
-        prevNode->link = tmp;
+        SinglyLL* tmp = prevSinglyLL->link->link;
+        free(prevSinglyLL->link);
+        prevSinglyLL->link = tmp;
     }
 }
 
