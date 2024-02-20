@@ -145,31 +145,66 @@ void deleteAt(int curr){
         
     }
 }
-
+void choices(){
+    printf("1.InsertAtBegin\n2.InsertAtEnd\n3.InsertAfter\n4.DeleteAtBegin\n5.DeletAtEnd\n6.DeleteAny\n7.Display\n8.Exit");
+}
 
 
 int main(){
-    // insertAtEnd(20);
-    // insertAtEnd(30);
-    // insertAtEnd(40);
-    // insertAtEnd(50);
-    // insertAtBegin(20);
-    insertAtBegin(10);
-    // insertAtBegin(30);
-    // insertAtBegin(40);
-    display();
-    // insertAtEnd(10);
-    // insertAtEnd(20);
-    // insertAtEnd(30);
-    // insertAtEnd(40);
-    // insertAfter(10,70);
-    // deleteAtBeggining();
-    printf("\n");
-    deleteAt(10);
-    display();
-    // deleteAtBeggining();
-    // display();
-    // printf("\n");
-    // deleteAtEnd();
-    // display();
+    int choice;
+    int flag=1;
+    while (flag)
+    {   
+        choices();
+        printf("Enter Your Choice : ");
+        scanf("%d",&choice);
+        switch (choice)
+        {
+        case 1:
+            int val;
+            printf("Enter value : ");
+            scanf("%d",&val);
+            insertAtBegin(val);
+            break;
+        case 2:
+            int val;
+            printf("Enter value : ");
+            scanf("%d",&val);
+            insertAtEnd(val);
+            break;
+        case 3:
+            int val1,val2;
+            printf("Enter prev value : ");
+            scanf("%d",&val1);
+            printf("Enter Insert value : ");
+            scanf("%d",&val2);
+            insertAfter(val1,val2);
+            break;
+        case 4:
+            deleteAtBeggining();
+            break;
+        case 5:
+            deleteAtEnd();
+            break;
+        case 6:
+            int val;
+            printf("Enter value to be deleted: ");
+            scanf("%d",&val);
+            deleteAfter(val);
+            break;
+        case 7:
+            display();
+            break;
+        case 8:
+            flag=0;
+            break;    
+        default:
+            printf("Enter Valid Choicess.....\n");
+            break;
+        }
+    }
+    
+    return 0;
 }
+
+

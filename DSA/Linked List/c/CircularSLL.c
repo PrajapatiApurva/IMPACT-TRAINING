@@ -149,22 +149,64 @@ void deleteAfter(int prev){
 
 
 
+void choices(){
+    printf("1.InsertAtBegin\n2.InsertAtEnd\n3.InsertAfter\n4.DeleteAtBegin\n5.DeletAtEnd\n6.DeleteAny\n7.Display\n8.Exit");
+}
+
+
 int main(){
-    // insertAtEnd(80);
-    insertAtEnd(10);
-    insertAtEnd(20);
-    insertAtEnd(30);
-    insertAtEnd(40);
-    insertAtEnd(50);
-    insertAtEnd(60);
-    insertAfter(60,100);
-    display();
-    deleteAtEnd();
-    deleteAfter(10);
-    display();
-    // deleteAtBeggining();
-    // deleteAtBeggining();
-    // deleteAtBeggining();
-    // deleteAtBeggining();
-    // display();
+    int choice;
+    int flag=1;
+    while (flag)
+    {   
+        choices();
+        printf("Enter Your Choice : ");
+        scanf("%d",&choice);
+        switch (choice)
+        {
+        case 1:
+            int val;
+            printf("Enter value : ");
+            scanf("%d",&val);
+            insertAtBegin(val);
+            break;
+        case 2:
+            int val;
+            printf("Enter value : ");
+            scanf("%d",&val);
+            insertAtEnd(val);
+            break;
+        case 3:
+            int val1,val2;
+            printf("Enter prev value : ");
+            scanf("%d",&val1);
+            printf("Enter Insert value : ");
+            scanf("%d",&val2);
+            insertAfter(val1,val2);
+            break;
+        case 4:
+            deleteAtBeggining();
+            break;
+        case 5:
+            deleteAtEnd();
+            break;
+        case 6:
+            int val;
+            printf("Enter value to be deleted: ");
+            scanf("%d",&val);
+            deleteAfter(val);
+            break;
+        case 7:
+            display();
+            break;
+        case 8:
+            flag=0;
+            break;    
+        default:
+            printf("Enter Valid Choicess.....\n");
+            break;
+        }
+    }
+    
+    return 0;
 }

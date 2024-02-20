@@ -179,32 +179,5 @@ int main(){
         }
     }
     
-    // insertAtBegin(10);
-    // display();
-    // printf("\n");
-    // insertAtBegin(20);
-    // display();
-    // printf("\n");
-    // insertAtBegin(30);
-    // display();
-    // insertAtEnd(90);
-    // printf("\n");
-    // display();
-    // printf("\n%p\n",search(90));
-    // insertAfter(10,100);
-    // display();
-    // deleteAfter(20);
-    // printf("\n");
-    // display();
-    insertAtEnd(10);
-    insertAtEnd(20);
-    insertAtEnd(30);
-    insertAtEnd(40);
-    display();
-    printf("\n");
-    deleteAtBeggining();
-    display();
-    printf("\n");
-    deleteAtEnd();
-    display();
+    return 0;
 }
